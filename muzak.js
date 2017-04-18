@@ -96,7 +96,7 @@ function onIntent(intentRequest, session, callback) {
 
     // Check for a Close intent
 
-    if (intentRequest.intent.intentName == "Close") {
+    if (intentRequest.intent.name == "Close") {
         closeInteractiveSession(callback);
         return;
     }
@@ -143,18 +143,21 @@ function dispatchIntent(squeezeserver, players, intent, session, callback) {
         giveHelp(session, callback);
 
     } else {
-
-        // Try to find the target player
+        // Try to find the target player - better have one
+        if (typeof intent.slots === 'undefined' || typeof intent.slots.Player === 'undefined') {
+             console.log("Expected player in intent request");
+             callback(session.attributes, buildSpeechletResponse(intentName, "Sorry, I can't find a player", null, session.new));         
+        }
 
         var player = findPlayerObject(squeezeserver, players, ((typeof intent.slots.Player.value !== 'undefined') && (intent.slots.Player.value !== null) ?
                                                                            intent.slots.Player.value :
                                                                            (typeof session.attributes !== 'undefined' ? session.attributes.player : "")));
+
         if (player === null || player === undefined) {
-
             // Couldn't find the player, return an error response
+             console.log("Player not found");
+             callback(session.attributes, buildSpeechletResponse(intentName, "Player not found", null, session.new));
 
-            console.log("Player not found: " + intent.slots.Player.value);
-            callback(session.attributes, buildSpeechletResponse(intentName, "Player not found", null, session.new));
 
         } else {
 
