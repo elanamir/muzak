@@ -151,6 +151,15 @@
       ]
     },
     {
+      "intent": "SelectApp",
+      "slots": [
+        {
+          "name": "App",
+          "type": "APPLICATIONS"
+        }
+      ]
+    },
+    {
       "intent": "Close"
     },
     {

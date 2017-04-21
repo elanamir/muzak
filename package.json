@@ -14,7 +14,10 @@
     "claudia": "^2.9.0"
   },
   "dependencies": {
+    "dotenv": "^4.0.0",
     "lodash": "^4.17.4",
-    "squeezenode-lordpengwin": "git+https://github.com/lordpengwin/squeezenode.git"
+    "spotify-web-api-node": "^2.3.6",
+    "squeezenode-lordpengwin": "git+https://github.com/lordpengwin/squeezenode.git",
+    "urlencode": "^1.1.0"
   }
 }
