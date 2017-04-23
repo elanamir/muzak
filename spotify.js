@@ -2,9 +2,8 @@ const SqueezeServer = require('squeezenode-lordpengwin');
 const _ = require('lodash');
 const repromptText = "What do you want me to do";
 const SpotifyWebApi = require('spotify-web-api-node');
-const urlencode = require('urlencode');
 
-const squeeze = new SqueezeServer('http://127.0.0.1', 9000);
+const squeeze = new SqueezeServer(process.env.SQUEEZESERVER_URL, process.env.SQUEEZESERVER_PORT);
 const MAX_SEARCH = 20;
 const spotifyApi = new SpotifyWebApi({
   clientId : process.env.SPOTIFY_CLIENT_ID,
