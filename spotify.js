@@ -7,8 +7,8 @@ const urlencode = require('urlencode');
 const squeeze = new SqueezeServer('http://127.0.0.1', 9000);
 const MAX_SEARCH = 20;
 const spotifyApi = new SpotifyWebApi({
-  clientId : '65e1c3401ab14b24921bc35fe31bbb3f',
-  clientSecret : '72ca625592244fde80f74c6511c4318b',
+  clientId : process.env.SPOTIFY_CLIENT_ID,
+  clientSecret: process.env.SPOTIFY_CLIENT_SECRET
 });
 
 
