@@ -111,15 +111,9 @@ class Dispatcher {
             Utils.giveHelp(session, callback); //XXX shouldn't really be in Utils.
 
         } else {
-            // Try to find the target player - better have one
-            if (typeof intent.slots === 'undefined' || typeof intent.slots.Player === 'undefined') {
-                 console.log("Expected player in intent request");
-                 callback(session.attributes, Utils.buildSpeechletResponse(intentName, "Sorry, I can't find a player", null, session.new));         
-            }
-
-
             let playerName;
-            if (typeof intent.slots.Player.value !== 'undefined' && intent.slots.Player.value !== null) {
+            if (typeof intent.slots !== 'undefined' && typeof intent.slots.Player !== 'undefined' && 
+                typeof intent.slots.Player.value !== 'undefined' && intent.slots.Player.value !== null) {
                 playerName = intent.slots.Player.value;
             } else if (typeof session.attributes !== 'undefined' && typeof session.attributes.player !== 'undefined') {
                 playerName = session.attributes.player;
@@ -140,6 +134,8 @@ class Dispatcher {
                 session.attributes = {player: player.name.toLowerCase()};
 
                 // Call the target intent
+
+                // XXX make this table driven
 
                 if ("StartPlayer" == intentName) {
                     PlayerIntent.start(player, session, callback);
@@ -169,9 +165,8 @@ class Dispatcher {
                     PlayerIntent.whatsPlaying(player, session, callback);
                 } else if ("SelectPlayer" == intentName) {
                     PlayerIntent.select(player, session, callback);
-                } else if ("SelectApp" == intentName) {
-                    // XXX error checking
-                    application = selectApplication(player, intent, session, callback);
+                } else if ("PlayTrack" == intentName) {
+                    PlayerIntent.playTrack(player, intent, session, callback)
                 } else {
                     callback(session.attributes, Utils.buildSpeechletResponse("Invalid Request", intentName + " is not a valid request", repromptText, session.new));
                     throw " intent";

@@ -17,3 +17,5 @@ node_modules/
 muzak.zip
 claudia.json
 config.js
+.env
+

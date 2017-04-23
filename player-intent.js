@@ -41,7 +41,7 @@ class PlayerIntent {
    * @param {Object} intent - The intent object.
    */
 
-  static playPlaylist(player, intent, session, callback) {
+  static playLocalPlaylist(player, intent, session, callback) {
 
     console.log("In playPlaylist with intent %j", intent);
     var possibleSlots = ["Artist", "Album", "Genre", "Playlist"];
@@ -120,10 +120,10 @@ class PlayerIntent {
    * @param {Object} intent - The intent object.
    */
 
-  static playItem(player, intent, session, callback) {
+  static playTrack(player, intent, session, callback) {
 
     console.log("In playItem with intent %j", intent);
-    var possibleSlots = ["Artist", "Album", "Genre", "Track", "Playlist"];
+    var possibleSlots = ["Artist", "Album", "Track", "Playlist"];
     var intentSlots = _.mapKeys(_.get(intent, "slots"), (value, key) => {
       return key.charAt(0).toUpperCase() + key.toLowerCase().substring(1)
     });
@@ -132,15 +132,27 @@ class PlayerIntent {
     // Transform our slot data into a friendlier object.
 
     _.each(possibleSlots, function(slotName) {
-      values[slotName] = _.startCase( // TODO: omg the LMS api is friggin case sensitive
-        _.get(intentSlots, slotName + ".value")
-      );
+      values[slotName] = _.get(intentSlots, slotName + ".value")
     });
 
-    // XXX search spotify here... 
 
-    console.log("HERE");
-    callback(session.attributes, Utils.buildSpeechletResponse("Play Item", "Spotify", null, true));
+    // Convert to something we can work with... 
+    const artist = null || values['Artist']
+    const album = null || values['Album']
+    const track = null || values['Track']
+
+    const reply = function (result) {  // XXX work on this eventually
+      callback(session.attributes, Utils.buildSpeechletResponse("Play Item", "Spotify", null, true));
+    }
+
+    return Spotify.getTrackUri(track, artist, album)
+    .then((uri) => {
+      if (!uri) {
+        return {result: 'ok'}; // XXX
+      }
+      return PlayerIntent.loadToPlaylist(player, uri)
+    })
+    .then(reply);
   };
 
 

@@ -14,15 +14,15 @@ const spotifyApi = new SpotifyWebApi({
 
 class Spotify {
 
-	static searchTracks(track, artist) {
+	static searchTracks(track, artist, album) {
 		// Search tracks whose artist's name contains 'Kendrick Lamar', and track name contains 'Alright'
 		let s = '';
 		if (track) {
-			s += "track:" + urlencode.encode(track);
+			s += "track:" + track;
 		}
 
 		if (artist) {
-			s += " artist:" + urlencode.encode(artist);  // XXX url encode
+			s += " artist:" + artist;  // XXX url encode
 		}
 
 		if (s !== '') {
@@ -39,29 +39,13 @@ class Spotify {
 		}
 	}
 
-	static getUri(track, artist) {
+	static getTrackUri(track, artist, album, position = 0) {
 		return Spotify.searchTracks(track, artist)
 		.then(body => {
 			if (body.tracks && body.tracks.items && body.tracks.items.length > 0) {
-				return body.tracks.items[0].uri;
+				return body.tracks.items[position].uri;
 			} else {
 				return null;
-			}
-		});
-	}
-
-	static play(player, uri) {
-		return Spotify.loadToPlaylist(player, uri, function(reply) {
-			if (!reply.ok) {
-				console.log('Error in loadToPlay');
-			}
-		});
-	}
-
-	static add(player, uri) {
-		return Spotify.addToPlaylist(player, uri, function(reply) {
-			if (!reply.ok) {
-				console.log('Error in addToPlay');
 			}
 		});
 	}

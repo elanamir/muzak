@@ -1,6 +1,9 @@
+PlayTrack play {Track} 
+PlayTrack play {Track} by {Artist}
+PlayTrack play {Track} in the {Player}
+PlayTrack play {Track} by {Artist} in the {Player}
 StartPlayer start
-StartPlayer play
-StartPlayer play {Player}
+StartPlayer continue
 StartPlayer play music in {Player}
 StartPlayer start music in {Player}
 StartPlayer start {Player}
@@ -451,3 +454,4 @@ Help give me help
 Help assistance
 Help how do I
 Help how do I do things
+
