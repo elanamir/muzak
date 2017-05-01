@@ -9,7 +9,7 @@ const SqueezeServer = require('squeezenode-lordpengwin');
 const _ = require('lodash');
 const repromptText = "What do you want me to do";
 const Utils = require('./utils')
-const PlayerIntent = require('./player-intent')
+const intentMap = require('./intent-map')
 
 class Dispatcher {
     /**
@@ -79,8 +79,9 @@ class Dispatcher {
                 if (reply.ok) {
                     console.log("getPlayers: %j", reply);
                     Dispatcher.dispatchIntent(squeezeserver, reply.result, intentRequest.intent, session, callback);
-                } else
+                } else {
                     callback(session.attributes, Utils.buildSpeechletResponse("Get Players", "Failed to get list of players", null, true));
+                }
             });
         });
     }
@@ -100,6 +101,18 @@ class Dispatcher {
         const intentName = intent.name;
         console.log("Got intent: %j", intent);
         console.log("Session is %j", session);
+
+        if (typeof intentMap[intentName] === 'undefined') {
+            callback(session.attributes, Utils.buildSpeechletResponse("Invalid Request", intentName + " is not a valid request", repromptText, session.new));
+            throw " intent";
+        } else {
+            intentMap[intentName].process(squeezeserver, players, intent, session, callback);
+        }
+    }
+
+/**
+
+
 
         if ("SyncPlayers" == intentName) {
             PlayerIntent.syncPlayers(squeezeserver, players, intent, session, callback);
@@ -174,7 +187,7 @@ class Dispatcher {
             }
         }
     }
-
+**/
     /**
      * Called when the user ends the session.
      * Is not called when the skill returns shouldEndSession=true.
@@ -221,43 +234,6 @@ class Dispatcher {
 
         callback(sessionAttributes, Utils.buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
     }
-
-    /**
-     * Find a player object given its name. Player objects can be used to interact with the player
-     *
-     * @param squeezeserver The SqueezeServer to get the Player object from
-     * @param players A list of players to search
-     * @param name The name of the player to find
-     * @returns The target player or undefined if it is not found
-     */
-
-    static findPlayerObject(squeezeserver, players, name) {
-
-        name = PlayerIntent.normalizeName(name);
-        console.log("In findPlayerObject with " + name);
-
-        // Look for the player in the players list that matches the given name. Then return the corresponding player object
-        // from the squeezeserver stored by the player's id
-
-        // NOTE: For some reason squeezeserver.players[] is empty but you can still reference values in it. I think it
-        //       is a weird javascript timing thing
-
-        for (let pl in players) {
-            if (
-                players[pl].name.toLowerCase() === name || // name matches the requested player
-                (name === "" && players.length === 1)      // name is undefined and there's only one player,
-                                                           // so assume that's the one we want.
-            ) {
-                return squeezeserver.players[players[pl].playerid];
-            }
-        }
-
-        console.log("Player %s not found", name);
-        return null;
-    }
-
-
-
 }
 
 module.exports = Dispatcher;

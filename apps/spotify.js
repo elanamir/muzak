@@ -1,6 +1,5 @@
 const SqueezeServer = require('squeezenode-lordpengwin');
 const _ = require('lodash');
-const repromptText = "What do you want me to do";
 const SpotifyWebApi = require('spotify-web-api-node');
 
 const squeeze = new SqueezeServer(process.env.SQUEEZESERVER_URL, process.env.SQUEEZESERVER_PORT);

@@ -2,8 +2,13 @@ PlayTrack play {Track}
 PlayTrack play {Track} by {Artist}
 PlayTrack play {Track} in the {Player}
 PlayTrack play {Track} by {Artist} in the {Player}
+PlayTrack play {Track} on the {Player}
+PlayTrack play {Track} by {Artist} on the {Player}
+PlayTrack play song {Track} 
+PlayTrack play song {Track} by {Artist} in the {Player}
 StartPlayer start
 StartPlayer continue
+StartPlayer resume
 StartPlayer play music in {Player}
 StartPlayer start music in {Player}
 StartPlayer start {Player}
@@ -28,138 +33,138 @@ StartPlayer unpause music in {Player} squeeze box
 StartPlayer unpause music on {Player} squeeze box
 StartPlayer unpause player in {Player} squeeze box
 StartPlayer unpause player {Player} squeeze box
-PlayPlaylist play artist {Air|Artist}
-PlayPlaylist play artist {Best Coast|Artist}
-PlayPlaylist play artist {The Beatles|Artist}
-PlayPlaylist play artist {Beautiful Small Machines|Artist}
-PlayPlaylist play artist {Boy Eats Drum Machine|Artist}
-PlayPlaylist play artist {The Bird and the Bee|Artist}
-PlayPlaylist play artist {The Good the bad and the ugly|Artist}
-PlayPlaylist play artist {I am the world trade center|Artist}
-PlayPlaylist play artist {And you will know us by the trail of the dead|Artist}
-PlayPlaylist play artist {Air|Artist} in {Player}
-PlayPlaylist play artist {Best Coast|Artist} in {Player}
-PlayPlaylist play artist {The Beatles|Artist} in {Player}
-PlayPlaylist play artist {Beautiful Small Machines|Artist} in {Player}
-PlayPlaylist play artist {Boy Eats Drum Machine|Artist} in {Player}
-PlayPlaylist play artist {The Bird and the Bee|Artist} in {Player}
-PlayPlaylist play artist {The Good the bad and the ugly|Artist} in {Player}
-PlayPlaylist play artist {I am the world trade center|Artist} in {Player}
-PlayPlaylist play artist {And you will know us by the trail of the dead|Artist} in {Player}
-PlayPlaylist play the artist {Air|Artist}
-PlayPlaylist play the artist {Best Coast|Artist}
-PlayPlaylist play the artist {The Beatles|Artist}
-PlayPlaylist play the artist {Beautiful Small Machines|Artist}
-PlayPlaylist play the artist {Boy Eats Drum Machine|Artist}
-PlayPlaylist play the artist {The Bird and the Bee|Artist}
-PlayPlaylist play the artist {The Good the bad and the ugly|Artist}
-PlayPlaylist play the artist {I am the world trade center|Artist}
-PlayPlaylist play the artist {And you will know us by the trail of the dead|Artist}
-PlayPlaylist play the artist {Air|Artist} in {Player}
-PlayPlaylist play the artist {Best Coast|Artist} in {Player}
-PlayPlaylist play the artist {The Beatles|Artist} in {Player}
-PlayPlaylist play the artist {Beautiful Small Machines|Artist} in {Player}
-PlayPlaylist play the artist {Boy Eats Drum Machine|Artist} in {Player}
-PlayPlaylist play the artist {The Bird and the Bee|Artist} in {Player}
-PlayPlaylist play the artist {The Good the bad and the ugly|Artist} in {Player}
-PlayPlaylist play the artist {I am the world trade center|Artist} in {Player}
-PlayPlaylist play the artist {And you will know us by the trail of the dead|Artist} in {Player}
-PlayPlaylist play playlist {christmas|Playlist}
-PlayPlaylist play playlist {christmas|Playlist}
-PlayPlaylist play playlist {workout music|Playlist}
-PlayPlaylist play playlist {party time rock|Playlist}
-PlayPlaylist play playlist {nineties nostalgia mix|Playlist}
-PlayPlaylist play playlist {long name for a playlist right|Playlist}
-PlayPlaylist play playlist {christmas|Playlist} in {Player}
-PlayPlaylist play playlist {workout music|Playlist} in {Player}
-PlayPlaylist play playlist {party time rock|Playlist} in {Player}
-PlayPlaylist play playlist {nineties nostalgia mix|Playlist} in {Player}
-PlayPlaylist play playlist {long name for a playlist right|Playlist} in {Player}
-PlayPlaylist play the playlist {workout music|Playlist}
-PlayPlaylist play the playlist {party time rock|Playlist}
-PlayPlaylist play the playlist {nineties nostalgia mix|Playlist}
-PlayPlaylist play the playlist {long name for a playlist right|Playlist}
-PlayPlaylist play the playlist {christmas|Playlist} in {Player}
-PlayPlaylist play the playlist {workout music|Playlist} in {Player}
-PlayPlaylist play the playlist {party time rock|Playlist} in {Player}
-PlayPlaylist play the playlist {nineties nostalgia mix|Playlist} in {Player}
-PlayPlaylist play the playlist {long name for a playlist right|Playlist} in {Player}
-PlayPlaylist play the album {Revolver|Album}
-PlayPlaylist play the album {Abbey Road|Album}
-PlayPlaylist play the album {Dig Me Out|Album}
-PlayPlaylist play the album {Never Lose that Feeling|Album}
-PlayPlaylist play the album {He Who Saw the Deep|Album}
-PlayPlaylist play the album {Push Barman to Open Old Wounds|Album}
-PlayPlaylist play the album {The Places You Have Come to Fear the Most|Album}
-PlayPlaylist play album {Revolver|Album}
-PlayPlaylist play album {Abbey Road|Album}
-PlayPlaylist play album {Dig Me Out|Album}
-PlayPlaylist play album {Never Lose that Feeling|Album}
-PlayPlaylist play album {He Who Saw the Deep|Album}
-PlayPlaylist play album {Push Barman to Open Old Wounds|Album}
-PlayPlaylist play album {The Places You Have Come to Fear the Most|Album}
-PlayPlaylist play the album {Revolver|Album} by {The Beatles|Artist}
-PlayPlaylist play the album {Abbey Road|Album} by {The Beatles|Artist}
-PlayPlaylist play the album {Dig Me Out|Album} by {Sleater-Kinney|Artist}
-PlayPlaylist play the album {Never Lose that Feeling|Album} by {Swervedriver|Artist}
-PlayPlaylist play the album {He Who Saw the Deep|Album} by {iLiKETRAiNS|Artist}
-PlayPlaylist play the album {Push Barman to Open Old Wounds|Album} by {Belle and Sebastian|Artist}
-PlayPlaylist play the album {The Places You Have Come to Fear the Most|Album} by {Dashboard Confessional|Artist}
-PlayPlaylist play album {Revolver|Album} by {The Beatles|Artist}
-PlayPlaylist play album {Abbey Road|Album} by {The Beatles|Artist}
-PlayPlaylist play album {Dig Me Out|Album} by {Sleater-Kinney|Artist}
-PlayPlaylist play album {Never Lose that Feeling|Album} by {Swervedriver|Artist}
-PlayPlaylist play album {He Who Saw the Deep|Album} by {iLiKETRAiNS|Artist}
-PlayPlaylist play album {Push Barman to Open Old Wounds|Album} by {Belle and Sebastian|Artist}
-PlayPlaylist play album {The Places You Have Come to Fear the Most|Album} by {Dashboard Confessional|Artist}
-PlayPlaylist play the album {Revolver|Album} in {Player}
-PlayPlaylist play the album {Abbey Road|Album} in {Player}
-PlayPlaylist play the album {Dig Me Out|Album} in {Player}
-PlayPlaylist play the album {Never Lose that Feeling|Album} in {Player}
-PlayPlaylist play the album {He Who Saw the Deep|Album} in {Player}
-PlayPlaylist play the album {Push Barman to Open Old Wounds|Album} in {Player}
-PlayPlaylist play the album {The Places You Have Come to Fear the Most|Album} in {Player}
-PlayPlaylist play album {Revolver|Album} in {Player}
-PlayPlaylist play album {Abbey Road|Album} in {Player}
-PlayPlaylist play album {Dig Me Out|Album} in {Player}
-PlayPlaylist play album {Never Lose that Feeling|Album} in {Player}
-PlayPlaylist play album {He Who Saw the Deep|Album} in {Player}
-PlayPlaylist play album {Push Barman to Open Old Wounds|Album} in {Player}
-PlayPlaylist play album {The Places You Have Come to Fear the Most|Album} in {Player}
-PlayPlaylist play the album {Revolver|Album} by {The Beatles|Artist} in {Player}
-PlayPlaylist play the album {Abbey Road|Album} by {The Beatles|Artist} in {Player}
-PlayPlaylist play the album {Dig Me Out|Album} by {Sleater-Kinney|Artist} in {Player}
-PlayPlaylist play the album {Never Lose that Feeling|Album} by {Swervedriver|Artist} in {Player}
-PlayPlaylist play the album {He Who Saw the Deep|Album} by {iLiKETRAiNS|Artist} in {Player}
-PlayPlaylist play the album {Push Barman to Open Old Wounds|Album} by {Belle and Sebastian|Artist} in {Player}
-PlayPlaylist play the album {The Places You Have Come to Fear the Most|Album} by {Dashboard Confessional|Artist} in {Player}
-PlayPlaylist play album {Revolver|Album} by {The Beatles|Artist} in {Player}
-PlayPlaylist play album {Abbey Road|Album} by {The Beatles|Artist} in {Player}
-PlayPlaylist play album {Dig Me Out|Album} by {Sleater-Kinney|Artist} in {Player}
-PlayPlaylist play album {Never Lose that Feeling|Album} by {Swervedriver|Artist} in {Player}
-PlayPlaylist play album {He Who Saw the Deep|Album} by {iLiKETRAiNS|Artist} in {Player}
-PlayPlaylist play album {Push Barman to Open Old Wounds|Album} by {Belle and Sebastian|Artist} in {Player}
-PlayPlaylist play album {The Places You Have Come to Fear the Most|Album} by {Dashboard Confessional|Artist} in {Player}
-PlayPlaylist play genre {rock|Genre}
-PlayPlaylist play genre {hip hop|Genre}
-PlayPlaylist play genre {math rock|Genre}
-PlayPlaylist play genre {alternative country|Genre}
-PlayPlaylist play genre {shoegaze|Genre}
-PlayPlaylist play the genre {rock|Genre}
-PlayPlaylist play the genre {hip hop|Genre}
-PlayPlaylist play the genre {math rock|Genre}
-PlayPlaylist play the genre {alternative country|Genre}
-PlayPlaylist play the genre {shoegaze|Genre}
-PlayPlaylist play genre {rock|Genre} in {Player}
-PlayPlaylist play genre {hip hop|Genre} in {Player}
-PlayPlaylist play genre {math rock|Genre} in {Player}
-PlayPlaylist play genre {alternative country|Genre} in {Player}
-PlayPlaylist play genre {shoegaze|Genre} in {Player}
-PlayPlaylist play the genre {rock|Genre} in {Player}
-PlayPlaylist play the genre {hip hop|Genre} in {Player}
-PlayPlaylist play the genre {math rock|Genre} in {Player}
-PlayPlaylist play the genre {alternative country|Genre} in {Player}
-PlayPlaylist play the genre {shoegaze|Genre} in {Player}
+PlayLocalPlaylist play artist {Air|Artist}
+PlayLocalPlaylist play artist {Best Coast|Artist}
+PlayLocalPlaylist play artist {The Beatles|Artist}
+PlayLocalPlaylist play artist {Beautiful Small Machines|Artist}
+PlayLocalPlaylist play artist {Boy Eats Drum Machine|Artist}
+PlayLocalPlaylist play artist {The Bird and the Bee|Artist}
+PlayLocalPlaylist play artist {The Good the bad and the ugly|Artist}
+PlayLocalPlaylist play artist {I am the world trade center|Artist}
+PlayLocalPlaylist play artist {And you will know us by the trail of the dead|Artist}
+PlayLocalPlaylist play artist {Air|Artist} in {Player}
+PlayLocalPlaylist play artist {Best Coast|Artist} in {Player}
+PlayLocalPlaylist play artist {The Beatles|Artist} in {Player}
+PlayLocalPlaylist play artist {Beautiful Small Machines|Artist} in {Player}
+PlayLocalPlaylist play artist {Boy Eats Drum Machine|Artist} in {Player}
+PlayLocalPlaylist play artist {The Bird and the Bee|Artist} in {Player}
+PlayLocalPlaylist play artist {The Good the bad and the ugly|Artist} in {Player}
+PlayLocalPlaylist play artist {I am the world trade center|Artist} in {Player}
+PlayLocalPlaylist play artist {And you will know us by the trail of the dead|Artist} in {Player}
+PlayLocalPlaylist play the artist {Air|Artist}
+PlayLocalPlaylist play the artist {Best Coast|Artist}
+PlayLocalPlaylist play the artist {The Beatles|Artist}
+PlayLocalPlaylist play the artist {Beautiful Small Machines|Artist}
+PlayLocalPlaylist play the artist {Boy Eats Drum Machine|Artist}
+PlayLocalPlaylist play the artist {The Bird and the Bee|Artist}
+PlayLocalPlaylist play the artist {The Good the bad and the ugly|Artist}
+PlayLocalPlaylist play the artist {I am the world trade center|Artist}
+PlayLocalPlaylist play the artist {And you will know us by the trail of the dead|Artist}
+PlayLocalPlaylist play the artist {Air|Artist} in {Player}
+PlayLocalPlaylist play the artist {Best Coast|Artist} in {Player}
+PlayLocalPlaylist play the artist {The Beatles|Artist} in {Player}
+PlayLocalPlaylist play the artist {Beautiful Small Machines|Artist} in {Player}
+PlayLocalPlaylist play the artist {Boy Eats Drum Machine|Artist} in {Player}
+PlayLocalPlaylist play the artist {The Bird and the Bee|Artist} in {Player}
+PlayLocalPlaylist play the artist {The Good the bad and the ugly|Artist} in {Player}
+PlayLocalPlaylist play the artist {I am the world trade center|Artist} in {Player}
+PlayLocalPlaylist play the artist {And you will know us by the trail of the dead|Artist} in {Player}
+PlayLocalPlaylist play playlist {christmas|Playlist}
+PlayLocalPlaylist play playlist {christmas|Playlist}
+PlayLocalPlaylist play playlist {workout music|Playlist}
+PlayLocalPlaylist play playlist {party time rock|Playlist}
+PlayLocalPlaylist play playlist {nineties nostalgia mix|Playlist}
+PlayLocalPlaylist play playlist {long name for a playlist right|Playlist}
+PlayLocalPlaylist play playlist {christmas|Playlist} in {Player}
+PlayLocalPlaylist play playlist {workout music|Playlist} in {Player}
+PlayLocalPlaylist play playlist {party time rock|Playlist} in {Player}
+PlayLocalPlaylist play playlist {nineties nostalgia mix|Playlist} in {Player}
+PlayLocalPlaylist play playlist {long name for a playlist right|Playlist} in {Player}
+PlayLocalPlaylist play the playlist {workout music|Playlist}
+PlayLocalPlaylist play the playlist {party time rock|Playlist}
+PlayLocalPlaylist play the playlist {nineties nostalgia mix|Playlist}
+PlayLocalPlaylist play the playlist {long name for a playlist right|Playlist}
+PlayLocalPlaylist play the playlist {christmas|Playlist} in {Player}
+PlayLocalPlaylist play the playlist {workout music|Playlist} in {Player}
+PlayLocalPlaylist play the playlist {party time rock|Playlist} in {Player}
+PlayLocalPlaylist play the playlist {nineties nostalgia mix|Playlist} in {Player}
+PlayLocalPlaylist play the playlist {long name for a playlist right|Playlist} in {Player}
+PlayLocalPlaylist play the album {Revolver|Album}
+PlayLocalPlaylist play the album {Abbey Road|Album}
+PlayLocalPlaylist play the album {Dig Me Out|Album}
+PlayLocalPlaylist play the album {Never Lose that Feeling|Album}
+PlayLocalPlaylist play the album {He Who Saw the Deep|Album}
+PlayLocalPlaylist play the album {Push Barman to Open Old Wounds|Album}
+PlayLocalPlaylist play the album {The Places You Have Come to Fear the Most|Album}
+PlayLocalPlaylist play album {Revolver|Album}
+PlayLocalPlaylist play album {Abbey Road|Album}
+PlayLocalPlaylist play album {Dig Me Out|Album}
+PlayLocalPlaylist play album {Never Lose that Feeling|Album}
+PlayLocalPlaylist play album {He Who Saw the Deep|Album}
+PlayLocalPlaylist play album {Push Barman to Open Old Wounds|Album}
+PlayLocalPlaylist play album {The Places You Have Come to Fear the Most|Album}
+PlayLocalPlaylist play the album {Revolver|Album} by {The Beatles|Artist}
+PlayLocalPlaylist play the album {Abbey Road|Album} by {The Beatles|Artist}
+PlayLocalPlaylist play the album {Dig Me Out|Album} by {Sleater-Kinney|Artist}
+PlayLocalPlaylist play the album {Never Lose that Feeling|Album} by {Swervedriver|Artist}
+PlayLocalPlaylist play the album {He Who Saw the Deep|Album} by {iLiKETRAiNS|Artist}
+PlayLocalPlaylist play the album {Push Barman to Open Old Wounds|Album} by {Belle and Sebastian|Artist}
+PlayLocalPlaylist play the album {The Places You Have Come to Fear the Most|Album} by {Dashboard Confessional|Artist}
+PlayLocalPlaylist play album {Revolver|Album} by {The Beatles|Artist}
+PlayLocalPlaylist play album {Abbey Road|Album} by {The Beatles|Artist}
+PlayLocalPlaylist play album {Dig Me Out|Album} by {Sleater-Kinney|Artist}
+PlayLocalPlaylist play album {Never Lose that Feeling|Album} by {Swervedriver|Artist}
+PlayLocalPlaylist play album {He Who Saw the Deep|Album} by {iLiKETRAiNS|Artist}
+PlayLocalPlaylist play album {Push Barman to Open Old Wounds|Album} by {Belle and Sebastian|Artist}
+PlayLocalPlaylist play album {The Places You Have Come to Fear the Most|Album} by {Dashboard Confessional|Artist}
+PlayLocalPlaylist play the album {Revolver|Album} in {Player}
+PlayLocalPlaylist play the album {Abbey Road|Album} in {Player}
+PlayLocalPlaylist play the album {Dig Me Out|Album} in {Player}
+PlayLocalPlaylist play the album {Never Lose that Feeling|Album} in {Player}
+PlayLocalPlaylist play the album {He Who Saw the Deep|Album} in {Player}
+PlayLocalPlaylist play the album {Push Barman to Open Old Wounds|Album} in {Player}
+PlayLocalPlaylist play the album {The Places You Have Come to Fear the Most|Album} in {Player}
+PlayLocalPlaylist play album {Revolver|Album} in {Player}
+PlayLocalPlaylist play album {Abbey Road|Album} in {Player}
+PlayLocalPlaylist play album {Dig Me Out|Album} in {Player}
+PlayLocalPlaylist play album {Never Lose that Feeling|Album} in {Player}
+PlayLocalPlaylist play album {He Who Saw the Deep|Album} in {Player}
+PlayLocalPlaylist play album {Push Barman to Open Old Wounds|Album} in {Player}
+PlayLocalPlaylist play album {The Places You Have Come to Fear the Most|Album} in {Player}
+PlayLocalPlaylist play the album {Revolver|Album} by {The Beatles|Artist} in {Player}
+PlayLocalPlaylist play the album {Abbey Road|Album} by {The Beatles|Artist} in {Player}
+PlayLocalPlaylist play the album {Dig Me Out|Album} by {Sleater-Kinney|Artist} in {Player}
+PlayLocalPlaylist play the album {Never Lose that Feeling|Album} by {Swervedriver|Artist} in {Player}
+PlayLocalPlaylist play the album {He Who Saw the Deep|Album} by {iLiKETRAiNS|Artist} in {Player}
+PlayLocalPlaylist play the album {Push Barman to Open Old Wounds|Album} by {Belle and Sebastian|Artist} in {Player}
+PlayLocalPlaylist play the album {The Places You Have Come to Fear the Most|Album} by {Dashboard Confessional|Artist} in {Player}
+PlayLocalPlaylist play album {Revolver|Album} by {The Beatles|Artist} in {Player}
+PlayLocalPlaylist play album {Abbey Road|Album} by {The Beatles|Artist} in {Player}
+PlayLocalPlaylist play album {Dig Me Out|Album} by {Sleater-Kinney|Artist} in {Player}
+PlayLocalPlaylist play album {Never Lose that Feeling|Album} by {Swervedriver|Artist} in {Player}
+PlayLocalPlaylist play album {He Who Saw the Deep|Album} by {iLiKETRAiNS|Artist} in {Player}
+PlayLocalPlaylist play album {Push Barman to Open Old Wounds|Album} by {Belle and Sebastian|Artist} in {Player}
+PlayLocalPlaylist play album {The Places You Have Come to Fear the Most|Album} by {Dashboard Confessional|Artist} in {Player}
+PlayLocalPlaylist play genre {rock|Genre}
+PlayLocalPlaylist play genre {hip hop|Genre}
+PlayLocalPlaylist play genre {math rock|Genre}
+PlayLocalPlaylist play genre {alternative country|Genre}
+PlayLocalPlaylist play genre {shoegaze|Genre}
+PlayLocalPlaylist play the genre {rock|Genre}
+PlayLocalPlaylist play the genre {hip hop|Genre}
+PlayLocalPlaylist play the genre {math rock|Genre}
+PlayLocalPlaylist play the genre {alternative country|Genre}
+PlayLocalPlaylist play the genre {shoegaze|Genre}
+PlayLocalPlaylist play genre {rock|Genre} in {Player}
+PlayLocalPlaylist play genre {hip hop|Genre} in {Player}
+PlayLocalPlaylist play genre {math rock|Genre} in {Player}
+PlayLocalPlaylist play genre {alternative country|Genre} in {Player}
+PlayLocalPlaylist play genre {shoegaze|Genre} in {Player}
+PlayLocalPlaylist play the genre {rock|Genre} in {Player}
+PlayLocalPlaylist play the genre {hip hop|Genre} in {Player}
+PlayLocalPlaylist play the genre {math rock|Genre} in {Player}
+PlayLocalPlaylist play the genre {alternative country|Genre} in {Player}
+PlayLocalPlaylist play the genre {shoegaze|Genre} in {Player}
 RandomizePlayer randomize
 RandomizePlayer randomize {Player}
 RandomizePlayer randomize player {Player}
@@ -182,20 +187,20 @@ RandomizePlayer start random player in {Player} squeeze box
 RandomizePlayer start random player {Player} squeeze box
 RandomizePlayer randomize music in {Player} squeeze box
 RandomizePlayer randomize music on {Player} squeeze box
-StopPlayer stop
-StopPlayer stop {Player}
-StopPlayer stop player in {Player}
-StopPlayer stop music in {Player}
-StopPlayer stop player {Player}
-StopPlayer turn off {Player}
-StopPlayer kill {Player}
-StopPlayer stop {Player} squeeze box
-StopPlayer stop player in {Player} squeeze box
-StopPlayer stop music in {Player} squeeze box
-StopPlayer stop music on {Player} squeeze box
-StopPlayer stop player {Player} squeeze box
-StopPlayer turn off {Player} squeeze box
-StopPlayer kill {Player} squeeze box
+PowerDownPlayer turn off {Player}
+PowerDownPlayer kill {Player}
+PowerDownPlayer turn off {Player} squeeze box
+PowerDownPlayer kill {Player} squeeze box
+PausePlayer stop {Player} squeeze box
+PausePlayer stop player in {Player} squeeze box
+PausePlayer stop music in {Player} squeeze box
+PausePlayer stop music on {Player} squeeze box
+PausePlayer stop player {Player} squeeze box
+PausePlayer stop
+PausePlayer stop {Player}
+PausePlayer stop player in {Player}
+PausePlayer stop music in {Player}
+PausePlayer stop player {Player}
 PausePlayer pause {Player} squeeze box
 PausePlayer pause player in {Player} squeeze box
 PausePlayer pause music in {Player} squeeze box
