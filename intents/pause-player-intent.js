@@ -16,7 +16,7 @@ class PausePlayerIntent extends Intent {
     if (!player) {
       // Couldn't find the player, return an error response
       console.log("Player not found");
-      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, session.new));
+      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, true));
     } else {
       try {
 
@@ -26,7 +26,7 @@ class PausePlayerIntent extends Intent {
 
         player.pause(function(reply) {
           if (reply.ok)
-            callback(session.attributes, Utils.buildSpeechletResponse("Pause Player", "Paused " + player.name + " squeezebox", null, session.new));
+            callback(session.attributes, Utils.buildSpeechletResponse("Pause Player", "Paused " + player.name + " squeezebox", null, false));
           else {
             console.log("Reply %j", reply);
             callback(session.attributes, Utils.buildSpeechletResponse("Pause Player", "Failed to pause player " + player.name + " squeezebox", null, true));

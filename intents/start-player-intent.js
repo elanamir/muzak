@@ -16,7 +16,7 @@ class StartPlayerIntent extends Intent {
     if (!player) {
       // Couldn't find the player, return an error response
       console.log("Player not found");
-      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, session.new));
+      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, false));
     } else {
       try {
 
@@ -24,7 +24,7 @@ class StartPlayerIntent extends Intent {
 
         player.play(function(reply) {
           if (reply.ok)
-            callback(session.attributes, Utils.buildSpeechletResponse("Start Player", "Playing " + player.name + " squeezebox", null, session.new));
+            callback(session.attributes, Utils.buildSpeechletResponse("Start Player", "Playing " + player.name + " squeezebox", null, false));
           else
             callback(session.attributes, Utils.buildSpeechletResponse("Start Player", "Failed to start player " + player.name + " squeezebox", null, true));
         });

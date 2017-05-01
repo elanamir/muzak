@@ -1,11 +1,11 @@
-PlayTrack play {Track} 
-PlayTrack play {Track} by {Artist}
-PlayTrack play {Track} in the {Player}
-PlayTrack play {Track} by {Artist} in the {Player}
-PlayTrack play {Track} on the {Player}
-PlayTrack play {Track} by {Artist} on the {Player}
-PlayTrack play song {Track} 
-PlayTrack play song {Track} by {Artist} in the {Player}
+PlayTrack play {paranoid android|Track} 
+PlayTrack play {creep|Track} by {radiohead|Artist}
+PlayTrack play {knights of cydonia|Track} in the {Player}
+PlayTrack play {hey you|Track} by {pink floyd|Artist} in the {Player}
+PlayTrack play {can't just get away|Track} on the {Player}
+PlayTrack play {streets of philadelphia|Track} by {bruce springsteen|Artist} on the {Player}
+PlayTrack play song {born to run|Track} 
+PlayTrack play song {thriller|Track} by {michael jackson|Artist} in the {Player}
 StartPlayer start
 StartPlayer continue
 StartPlayer resume

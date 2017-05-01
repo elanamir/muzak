@@ -11,10 +11,10 @@ class SetVolumeIntent extends Intent {
     if (!player) {
       // Couldn't find the player, return an error response
       console.log("Player not found");
-      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, session.new));
+      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, true));
     } else if (typeof intents.slots.Volume === 'undefined' || typeof intents.slot.Volume.values == 'undefined') {
       console.log("Player not found");
-      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Volume not found ", null, session.new));
+      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Volume not found ", null, true));
     } else {
         const volume = Number(intent.slots.Volume.value);
         SetVolumeIntent.setVolume(player, volume, session, callback);
@@ -75,7 +75,7 @@ class SetVolumeIntent extends Intent {
 
       player.setVolume(volume, function(reply) {
         if (reply.ok)
-          callback(session.attributes, Utils.buildSpeechletResponse("Set Player Volume", "", null, true));  // No need to interrupt song for with response;
+          callback(session.attributes, Utils.buildSpeechletResponse("Set Player Volume", "", null, false));  // No need to interrupt song for with response;
         else {
           console.log("Failed to set volume %j", reply);
           callback(session.attributes, Utils.buildSpeechletResponse("Set Player Volume", "Failed to set player volume", null, true));

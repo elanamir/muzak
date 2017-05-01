@@ -17,7 +17,7 @@ class PlayTrackIntent extends Intent {
     if (!player) {
       // Couldn't find the player, return an error response
       console.log("Player not found");
-      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, session.new));
+      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, true));
     } else {
       try {
         console.log("In playTrack with intent %j", intent);
@@ -41,7 +41,7 @@ class PlayTrackIntent extends Intent {
 
         const reply = function(result) { // XXX work on this eventually
           const text = (artist) ? "by " + artist : null;
-          callback(session.attributes, Utils.buildSpeechletResponse("Play Track", "Playing " + track + text, null, true));
+          callback(session.attributes, Utils.buildSpeechletResponse("Play Track", "Playing " + track + text, null, false));
         }
 
         return Spotify.getTrackUri(track, artist, album)

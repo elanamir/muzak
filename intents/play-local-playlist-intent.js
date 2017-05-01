@@ -17,7 +17,7 @@ class PlayLocalPlaylistIntent extends Intent {
     if (!player) {
       // Couldn't find the player, return an error response
       console.log("Player not found");
-      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, session.new));
+      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, true));
     } else {
       try {
 
@@ -64,7 +64,7 @@ class PlayLocalPlaylistIntent extends Intent {
             }
           }
 
-          callback(session.attributes, Utils.buildSpeechletResponse("Play Local Playlist", text, null, true));
+          callback(session.attributes, Utils.buildSpeechletResponse("Play Local Playlist", text, null, false));
         };
 
         // If a value for playlist is present, ignore everything else and play that

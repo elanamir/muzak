@@ -18,7 +18,7 @@
 
       player.next(function(reply) {
         if (reply.ok)
-          callback(session.attributes, Utils.buildSpeechletResponse("Skip Forward", "Skipped forward " + player.name + " squeezebox", null, session.new));
+          callback(session.attributes, Utils.buildSpeechletResponse("Skip Forward", "Skipped forward " + player.name + " squeezebox", null, false));
         else {
           console.log("Reply %j", reply);
           callback(session.attributes, Utils.buildSpeechletResponse("Skip Forward", "Failed to skip forward player " + player.name + " squeezebox", null, true));

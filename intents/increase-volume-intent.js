@@ -10,7 +10,7 @@ class IncreaseVolumeIntent extends SetVolumeIntent {
     if (!player) {
       // Couldn't find the player, return an error response
       console.log("Player not found");
-      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, session.new));
+      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, false));
     } else {
       const delta = parseInt(process.env.PLAYER_VOLUME_DELTA);
       SetVolumeIntent.changeVolume(player, session, callback, delta)

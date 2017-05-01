@@ -14,7 +14,7 @@ class PowerDownPlayerIntent extends Intent {
     if (!player) {
       // Couldn't find the player, return an error response
       console.log("Player not found");
-      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, session.new));
+      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, true));
     } else {
       try {
         console.log("In PowerDownPlayer with player %s", player.name);
@@ -22,7 +22,7 @@ class PowerDownPlayerIntent extends Intent {
         // Power down the player
         player.power(0, function(reply) {
           if (reply.ok)
-            callback(session.attributes, Utils.buildSpeechletResponse("Turn Off Player", "Turned off " + player.name + " squeezebox", null, session.new));
+            callback(session.attributes, Utils.buildSpeechletResponse("Turn Off Player", "Turned off " + player.name + " squeezebox", null, false));
           else {
             console.log("Reply %j", reply);
             callback(session.attributes, Utils.buildSpeechletResponse("Turn off Player", "Failed to turn off player " + player.name + " squeezebox", null, true));

@@ -31,7 +31,7 @@
       ]
     },
     {
-      "intent": "PlayPlaylist",
+      "intent": "PlayLocalPlaylist",
       "slots": [
         {
           "name": "Player",
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "intent": "StopPlayer",
+      "intent": "PowerDownPlayer",
       "slots": [
         {
           "name": "Player",
@@ -168,15 +168,6 @@
         {
           "name": "Player",
           "type": "PLAYERS"
-        }
-      ]
-    },
-    {
-      "intent": "SelectApp",
-      "slots": [
-        {
-          "name": "App",
-          "type": "APPLICATIONS"
         }
       ]
     },

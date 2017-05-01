@@ -15,7 +15,7 @@ class SelectPlayerIntent extends Intent {
     if (!player) {
       // Couldn't find the player, return an error response
       console.log("Player not found");
-      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, session.new));
+      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, true));
     } else {
       callback(session.attributes, Utils.buildSpeechletResponse("Select Player", "Selected player " + player.name, null, false));
     }
