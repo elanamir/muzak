@@ -12,33 +12,32 @@ class PausePlayerIntent extends Intent {
    */
 
   static process(squeezeserver, players, intent, session, callback) {
-    const player = this.getPlayer(squeezeserver, players, intent, session);
-    if (!player) {
-      // Couldn't find the player, return an error response
-      console.log("Player not found");
-      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, true));
-    } else {
-      try {
 
-        console.log("In pausePlayer with player %s", player.name);
-
-        // Pause the player
-
+    try {
+      console.log("In pausePlayer with player %s", player.name);
+      const player = this.getPlayer(squeezeserver, players, intent, session);
+      // Pause the player
+      if (!player) {
+        // Couldn't find the player, return an error response
+        console.log("Player not found");
+        callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, false));
+      } else {
         player.pause(function(reply) {
           if (reply.ok)
             callback(session.attributes, Utils.buildSpeechletResponse("Pause Player", "Paused " + player.name + " squeezebox", null, false));
           else {
             console.log("Reply %j", reply);
-            callback(session.attributes, Utils.buildSpeechletResponse("Pause Player", "Failed to pause player " + player.name + " squeezebox", null, true));
+            callback(session.attributes, Utils.buildSpeechletResponse("Pause Player", "Failed to pause player " + player.name + " squeezebox", null, false));
           }
         });
-
-      } catch (ex) {
-        console.log("Caught exception in pausePlayer %j", ex);
-        callback(session.attributes, Utils.buildSpeechletResponse("Pause Player", "Caught Exception", null, true));
       }
+
+    } catch (ex) {
+      console.log("Caught exception in pausePlayer %j", ex);
+      callback(session.attributes, Utils.buildSpeechletResponse("Pause Player", "Caught Exception", null, true));
     }
   }
 }
+
 
 module.exports = PausePlayerIntent;

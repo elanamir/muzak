@@ -13,14 +13,13 @@ class PlayLocalPlaylistIntent extends Intent {
 
   static process(squeezeserver, players, intent, session, callback) {
 
-    const player = this.getPlayer(squeezeserver, players, intent, session);
-    if (!player) {
-      // Couldn't find the player, return an error response
-      console.log("Player not found");
-      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, true));
-    } else {
-      try {
-
+    try {
+      const player = this.getPlayer(squeezeserver, players, intent, session);
+      if (!player) {
+        // Couldn't find the player, return an error response
+        console.log("Player not found");
+        callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, false));
+      } else {
         console.log("In playLocalPlaylist with intent %j", intent);
         var possibleSlots = ["Artist", "Album", "Genre", "Playlist"];
         var intentSlots = _.mapKeys(_.get(intent, "slots"), (value, key) => {
@@ -88,7 +87,7 @@ class PlayLocalPlaylistIntent extends Intent {
         }
       };
     } catch (ex) {
-      console.log("Caught exception in stopPlayer %j", ex);
+      console.log("Caught exception in play local playlist %j", ex);
       callback(session.attributes, Utils.buildSpeechletResponse("Play local playlist", "Caught Exception", null, true));
     }
   }

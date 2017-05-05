@@ -13,13 +13,14 @@ class PlayTrackIntent extends Intent {
    */
   static process(squeezeserver, players, intent, session, callback) {
 
-    const player = this.getPlayer(squeezeserver, players, intent, session);
-    if (!player) {
-      // Couldn't find the player, return an error response
-      console.log("Player not found");
-      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, true));
-    } else {
-      try {
+    try {
+      const player = this.getPlayer(squeezeserver, players, intent, session);
+      if (!player) {
+        // Couldn't find the player, return an error response
+        console.log("Player not found");
+        callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Player not found", null, true));
+      } else {
+
         console.log("In playTrack with intent %j", intent);
         var possibleSlots = ["Artist", "Album", "Track", "Playlist"];
         var intentSlots = _.mapKeys(_.get(intent, "slots"), (value, key) => {
@@ -41,7 +42,7 @@ class PlayTrackIntent extends Intent {
 
         const reply = function(result) { // XXX work on this eventually
           const text = (artist) ? "by " + artist : null;
-          callback(session.attributes, Utils.buildSpeechletResponse("Play Track", "Playing " + track + text, null, false));
+          callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Playing " + track + text, null, false));
         }
 
         return Spotify.getTrackUri(track, artist, album)
@@ -54,12 +55,13 @@ class PlayTrackIntent extends Intent {
             return this.loadToPlaylist(player, uri)
           })
           .then(reply);
-      } catch (ex) {
-        console.log("Caught exception while reporting player count and names", ex);
-        callback(session.attributes, Utils.buildSpeechletResponse("Name Players", "Caught exception trying to play track", null, true));
       }
+    } catch (ex) {
+      console.log("Caught exception in play track", ex);
+      callback(session.attributes, Utils.buildSpeechletResponse(intent.name, "Caught exception trying to play track", null, true));
     }
   }
 }
+
 
 module.exports = PlayTrackIntent;

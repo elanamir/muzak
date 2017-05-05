@@ -1,5 +1,5 @@
-const Intent = require('./intent');
-const Utils = require('./utils');
+const Intent = require('../intent');
+const Utils = require('../utils');
 
 class SyncPlayersIntent extends Intent {
   /**
@@ -12,7 +12,7 @@ class SyncPlayersIntent extends Intent {
    * @param callback The callback to use to return the result
    */
 
-  static sync(squeezeserver, players, intent, session, callback) {
+  static process(squeezeserver, players, intent, session, callback) {
 
     //// TODO: Need to make sure that both players are turned on.
 
@@ -25,13 +25,13 @@ class SyncPlayersIntent extends Intent {
       // Try to find the target players. We need the sqeezeserver player object for the first, but only the player info
       // object for the second.
 
-      player1 = findPlayerObject(squeezeserver, players, ((typeof intent.slots.FirstPlayer.value !== 'undefined') && (intent.slots.FirstPlayer.value != null) ? intent.slots.FirstPlayer.value : session.attributes.player));
-      if (player1 == null) {
+      player1 = Intent.getPlayer(squeezeserver, players, intent, session)
+      if (!player1) {
 
         // Couldn't find the player, return an error response
 
         console.log("Player not found: " + intent.slots.FirstPlayer.value);
-        callback(session.attributes, Utils.buildSpeechletResponse(intentName, "Player not found", null, session.new));
+        callback(session.attributes, Utils.buildSpeechletResponse(intentName, "Player not found", null, true));   // clean up the session in case of error
       }
 
       session.attributes = {
@@ -39,7 +39,7 @@ class SyncPlayersIntent extends Intent {
       };
       player2 = null;
       for (var pl in players) {
-        if (players[pl].name.toLowerCase() === normalizePlayer(intent.slots.SecondPlayer.value))
+        if (players[pl].name.toLowerCase() === Intent.normalizePlayer(intent.slots.SecondPlayer.value))
           player2 = players[pl];
       }
 
@@ -49,7 +49,7 @@ class SyncPlayersIntent extends Intent {
         console.log("Found players: %j and player2", player1, player2);
         player1.sync(player2.playerindex, function(reply) {
           if (reply.ok)
-            callback(session.attributes, Utils.buildSpeechletResponse("Sync Players", "Synced " + player1.name + " to " + player2.name, null, session.new));
+            callback(session.attributes, Utils.buildSpeechletResponse("Sync Players", "Synced " + player1.name + " to " + player2.name, null, false));
           else {
             console.log("Failed to sync %j", reply);
             callback(session.attributes, Utils.buildSpeechletResponse("Sync Players", "Failed to sync players " + player1.name + " and " + player2.name, null, true));
@@ -57,7 +57,7 @@ class SyncPlayersIntent extends Intent {
         });
       } else {
         console.log("Player not found: ");
-        callback(session.attributes, Utils.uildSpeechletResponse("Sync Players", "Player not found", null, session.new));
+        callback(session.attributes, Utils.uildSpeechletResponse("Sync Players", "Player not found", null, false));
       }
 
     } catch (ex) {
@@ -66,3 +66,5 @@ class SyncPlayersIntent extends Intent {
     }
   }
 }
+
+module.exports = SyncPlayersIntent;

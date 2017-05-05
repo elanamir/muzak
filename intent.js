@@ -4,6 +4,10 @@ const Utils = require('./utils');
 
 class Intent {
 
+  static process(squeezeserver, players, intent, session, callback) {
+      callback(session.attributes, Utils.buildSpeechletResponse("Base Intent", "Intent not implemented", null, false));
+  }
+
   static getPlayer(squeezeserver, players, intent, session) {
 
     let playerName;
@@ -19,7 +23,7 @@ class Intent {
     const player = this.findPlayerObject(squeezeserver, players, playerName);
 
     if (player) {
-      console.log("Player is " + player);
+      console.log("Player is " + player.name);
       session.attributes = {
         player: player.name.toLowerCase()
       };
